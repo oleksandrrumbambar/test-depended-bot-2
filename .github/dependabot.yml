@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"  # Перевіряти оновлення щоденно
+      time: "18:15"
+    commit-message:
+      prefix: "deps"  # Префікс для повідомлення коміту

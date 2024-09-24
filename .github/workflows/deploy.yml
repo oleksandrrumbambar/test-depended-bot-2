@@ -1,0 +1,16 @@
+name: Deploy on Workflow Success
+
+on:
+  workflow_run:
+    workflows: ["merge-queue"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    if: ${{ github.actor == 'dependabot[bot]' && github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo deploy message
+        run: echo "start deploy"

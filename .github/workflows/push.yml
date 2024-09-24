@@ -1,0 +1,14 @@
+name: Run on Push
+
+on:
+  push:
+    branches:
+      - main  # Основна гілка, до якої мерджить Dependabot
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run build step
+        run: echo "Building the project..."
